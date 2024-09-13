@@ -1,18 +1,23 @@
+import { useRef } from "react";
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Pressable } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 import Octicons from "@expo/vector-icons/Octicons";
+import BottomSheet, { BottomSheetMethods } from "@devvie/bottom-sheet";
 
 import CurrentDate from "@/components/CurrentDate";
 import TransactionsList from "@/components/TransactionsList";
+import CardLibrary from "@/components/CardLibrary";
 
 export default function App() {
+  const sheetRef = useRef<BottomSheetMethods>(null);
+
   return (
     <SafeAreaView style={styles.container}>
       {/* Top Container */}
       <View style={styles.topContainer}>
         <CurrentDate />
-        <Pressable>
+        <Pressable onPress={() => sheetRef.current?.open()}>
           <Octicons name="stack" size={24} color="#242324" />
         </Pressable>
       </View>
@@ -29,6 +34,10 @@ export default function App() {
         <Text style={styles.headerText}>Latest Transactions</Text>
         <TransactionsList />
       </View>
+      {/* Card Library Bottom Sheet */}
+      <BottomSheet ref={sheetRef} backdropMaskColor="#00000088">
+        <CardLibrary />
+      </BottomSheet>
       <StatusBar style="auto" />
     </SafeAreaView>
   );
@@ -39,7 +48,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#EDEEF1",
     justifyContent: "space-between",
-    paddingHorizontal: 16,
   },
   text: {
     fontFamily: "WorkSans_Regular",
@@ -50,6 +58,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     gap: 100,
+    paddingHorizontal: 12,
   },
   headerText: {
     fontSize: 20,
@@ -62,6 +71,7 @@ const styles = StyleSheet.create({
     paddingVertical: 16,
     backgroundColor: "#fff",
     width: "auto",
+    marginHorizontal: 12,
   },
   amountText: {
     fontFamily: "WorkSans_Light",

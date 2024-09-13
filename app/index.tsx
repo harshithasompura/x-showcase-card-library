@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import Octicons from "@expo/vector-icons/Octicons";
 
 import CurrentDate from "@/components/CurrentDate";
+import TransactionsList from "@/components/TransactionsList";
 
 export default function App() {
   return (
@@ -26,6 +27,7 @@ export default function App() {
       {/* Latest Transactions Container */}
       <View style={[styles.boxContainer, { flex: 1 }]}>
         <Text style={styles.headerText}>Latest Transactions</Text>
+        <TransactionsList />
       </View>
       <StatusBar style="auto" />
     </SafeAreaView>

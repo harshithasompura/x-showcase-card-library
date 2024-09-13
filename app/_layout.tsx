@@ -10,6 +10,7 @@ import * as SplashScreen from "expo-splash-screen";
 import { useEffect } from "react";
 import "react-native-reanimated";
 import {
+    WorkSans_300Light,
     WorkSans_400Regular,
     WorkSans_600SemiBold, 
     WorkSans_900Black
@@ -32,6 +33,7 @@ SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
   const [loaded, error] = useFonts({
+    WorkSans_Light: WorkSans_300Light,
     WorkSans_Regular: WorkSans_400Regular,
     WorkSans_SemiBold: WorkSans_600SemiBold,
     WorkSans_Black: WorkSans_900Black,

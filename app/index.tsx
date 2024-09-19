@@ -35,7 +35,11 @@ export default function App() {
         <TransactionsList />
       </View>
       {/* Card Library Bottom Sheet */}
-      <BottomSheet ref={sheetRef} backdropMaskColor="#00000088">
+      <BottomSheet
+        style={{ backgroundColor: "white" }}
+        ref={sheetRef}
+        backdropMaskColor="#00000088"
+      >
         <CardLibrary />
       </BottomSheet>
       <StatusBar style="auto" />

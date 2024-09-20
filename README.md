@@ -4,7 +4,7 @@
 
 ## 📱 Demo
 
-![Demo GIF](./assets/demo.mp4)
+![Demo GIF](./assets/demo.gif)
 
 ## Details
 
@@ -20,7 +20,7 @@ The following packages are used within this project:
 
 Download this project or clone this repo:
 
-https://github.com/harshithasompura/x-showcase-card-library.git
+<https://github.com/harshithasompura/x-showcase-card-library.git>
 
 You will also require the [Expo Go](https://expo.dev/go) App to run this on a physical device.
 
